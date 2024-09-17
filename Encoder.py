@@ -4,7 +4,8 @@ import torch.nn.functional as F
 import numpy as np
 import math
 
-
+from Encoder import Encoder
+from EncoderLayer import EncoderLayer
 
 class Encoder(nn.Module):
     def __init__(self, num_layers, d_model, num_heads, d_ff=2048, dropout=0.1):

@@ -4,7 +4,7 @@ import torch.nn.functional as F
 import numpy as np
 import math
 
-
+from Scaled_dot_product_attention import Scaled_dot_product_attention
 
 class MultiHeadAttention(nn.Module):
     def __init__(self, d_model, num_heads):
@@ -27,7 +27,7 @@ class MultiHeadAttention(nn.Module):
         value = self.value(value).view(batch_size, -1, self.num_heads, self.d_k).transpose(1, 2)
         
         # Apply scaled dot-product attention
-        attn_output, attention_weights = scaled_dot_product_attention(query, key, value, mask)
+        attn_output, attention_weights = Scaled_dot_product_attention(query, key, value, mask)
         
         # Concatenate and apply final linear layer
         attn_output = attn_output.transpose(1, 2).contiguous().view(batch_size, -1, self.num_heads * self.d_k)

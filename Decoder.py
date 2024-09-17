@@ -4,6 +4,8 @@ import torch.nn.functional as F
 import numpy as np
 import math
 
+from DecoderLayer import DecoderLayer
+
 class Decoder(nn.Module):
     def __init__(self, num_layers, d_model, num_heads, d_ff=2048, dropout=0.1):
         super(Decoder, self).__init__()

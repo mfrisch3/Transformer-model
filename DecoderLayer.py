@@ -4,6 +4,8 @@ import torch.nn.functional as F
 import numpy as np
 import math
 
+from MultiHeadAttention import MultiHeadAttention
+from FeedForwardNetwork import FeedForwardNetwork
 
 class DecoderLayer(nn.Module):
     def __init__(self, d_model, num_heads, d_ff=2048, dropout=0.1):

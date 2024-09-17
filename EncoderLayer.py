@@ -5,7 +5,7 @@ import numpy as np
 import math
 
 from FeedForwardNetwork import FeedForwardNetwork
-
+from MultiHeadAttention import MultiHeadAttention
 
 class EncoderLayer(nn.Module):
     def __init__(self, d_model, num_heads, d_ff=2048, dropout=0.1):
