@@ -20,7 +20,8 @@ tokenizer = GPT2Tokenizer.from_pretrained(model_name)
 
 # Set model to evaluation mode
 #model.eval()
-
+# Fix the padding issue by using eos_token as pad_token
+tokenizer.pad_token = tokenizer.eos_token
 # Loop to keep taking prompts and generating responses
 while True:
     # Take a prompt input from the terminal
